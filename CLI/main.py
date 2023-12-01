@@ -5,6 +5,8 @@ import os
 import sys
 import textwrap
 
+from CLI.parse import *
+
 
 BASE_CONFIG = "staticanalyze.yaml"
 LOG = logging.getLogger()
@@ -74,16 +76,10 @@ def main():
             
         )
     ]
+    parser.set_defaults(debug=False)
+    parser.set_defaults(verbose=False)
+    parser.set_defaults(quiet=False)
+    parser.set_defaults(ignore_nosec=False)
     
-    parser = argparse.ArgumentParser(
-        description="Static Analyzer - Prototype Project",
-        formatter_class = argparse.RawDescriptionHelpFormatter,
-    ) 
-    parser.add_argument(
-        "-r",
-        "--recursive",
-        dest="recursive",
-        action="store_true",
-        help="find and process files in subdirectories",
-    )
-    par
+    
+    

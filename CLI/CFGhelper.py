@@ -1,6 +1,5 @@
 import ast
 import json
-import astor
 
 def __init__(self):
     self.graph = nx.DiGraph()
@@ -149,5 +148,3 @@ output_code_path = './results/test_if_result/test_if_result.py'
 output_json_path = './results/test_if_result/test_if_result.json'
 output_image_path = './results/test_if_result/if_variable_usage.png'
 output_graph_path = './results/test_if_result/test_if_graph.json'
-
-rename_variables_and_visualize(input_path, output_code_path, output_json_path, output_image_path, output_graph_path)

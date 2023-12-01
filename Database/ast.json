@@ -1,0 +1,1350 @@
+{
+    "_nodetype": "Module",
+    "body": [
+        {
+            "_nodetype": "Import",
+            "names": [
+                {
+                    "_nodetype": "alias",
+                    "name": "random",
+                    "asname": null,
+                    "lineno": 1,
+                    "col_offset": 7
+                }
+            ],
+            "lineno": 1,
+            "col_offset": 0
+        },
+        {
+            "_nodetype": "FunctionDef",
+            "name": "calculate_statistics",
+            "args": {
+                "_nodetype": "arguments",
+                "posonlyargs": [],
+                "args": [
+                    {
+                        "_nodetype": "arg",
+                        "arg": "data",
+                        "annotation": null,
+                        "type_comment": null,
+                        "lineno": 3,
+                        "col_offset": 25
+                    }
+                ],
+                "vararg": null,
+                "kwonlyargs": [],
+                "kw_defaults": [],
+                "kwarg": null,
+                "defaults": []
+            },
+            "body": [
+                {
+                    "_nodetype": "Assign",
+                    "targets": [
+                        {
+                            "_nodetype": "Name",
+                            "id": "total",
+                            "ctx": {
+                                "_nodetype": "Store"
+                            },
+                            "lineno": 4,
+                            "col_offset": 4
+                        }
+                    ],
+                    "value": {
+                        "_nodetype": "Call",
+                        "func": {
+                            "_nodetype": "Name",
+                            "id": "sum",
+                            "ctx": {
+                                "_nodetype": "Load"
+                            },
+                            "lineno": 4,
+                            "col_offset": 12
+                        },
+                        "args": [
+                            {
+                                "_nodetype": "Name",
+                                "id": "data",
+                                "ctx": {
+                                    "_nodetype": "Load"
+                                },
+                                "lineno": 4,
+                                "col_offset": 16
+                            }
+                        ],
+                        "keywords": [],
+                        "lineno": 4,
+                        "col_offset": 12
+                    },
+                    "type_comment": null,
+                    "lineno": 4,
+                    "col_offset": 4
+                },
+                {
+                    "_nodetype": "Assign",
+                    "targets": [
+                        {
+                            "_nodetype": "Name",
+                            "id": "count",
+                            "ctx": {
+                                "_nodetype": "Store"
+                            },
+                            "lineno": 5,
+                            "col_offset": 4
+                        }
+                    ],
+                    "value": {
+                        "_nodetype": "Call",
+                        "func": {
+                            "_nodetype": "Name",
+                            "id": "len",
+                            "ctx": {
+                                "_nodetype": "Load"
+                            },
+                            "lineno": 5,
+                            "col_offset": 12
+                        },
+                        "args": [
+                            {
+                                "_nodetype": "Name",
+                                "id": "data",
+                                "ctx": {
+                                    "_nodetype": "Load"
+                                },
+                                "lineno": 5,
+                                "col_offset": 16
+                            }
+                        ],
+                        "keywords": [],
+                        "lineno": 5,
+                        "col_offset": 12
+                    },
+                    "type_comment": null,
+                    "lineno": 5,
+                    "col_offset": 4
+                },
+                {
+                    "_nodetype": "Assign",
+                    "targets": [
+                        {
+                            "_nodetype": "Name",
+                            "id": "average",
+                            "ctx": {
+                                "_nodetype": "Store"
+                            },
+                            "lineno": 6,
+                            "col_offset": 4
+                        }
+                    ],
+                    "value": {
+                        "_nodetype": "IfExp",
+                        "test": {
+                            "_nodetype": "Name",
+                            "id": "count",
+                            "ctx": {
+                                "_nodetype": "Load"
+                            },
+                            "lineno": 6,
+                            "col_offset": 31
+                        },
+                        "body": {
+                            "_nodetype": "BinOp",
+                            "left": {
+                                "_nodetype": "Name",
+                                "id": "total",
+                                "ctx": {
+                                    "_nodetype": "Load"
+                                },
+                                "lineno": 6,
+                                "col_offset": 14
+                            },
+                            "op": {
+                                "_nodetype": "Div"
+                            },
+                            "right": {
+                                "_nodetype": "Name",
+                                "id": "count",
+                                "ctx": {
+                                    "_nodetype": "Load"
+                                },
+                                "lineno": 6,
+                                "col_offset": 22
+                            },
+                            "lineno": 6,
+                            "col_offset": 14
+                        },
+                        "orelse": {
+                            "_nodetype": "Constant",
+                            "value": 0,
+                            "kind": null,
+                            "lineno": 6,
+                            "col_offset": 42
+                        },
+                        "lineno": 6,
+                        "col_offset": 14
+                    },
+                    "type_comment": null,
+                    "lineno": 6,
+                    "col_offset": 4
+                },
+                {
+                    "_nodetype": "Return",
+                    "value": {
+                        "_nodetype": "Tuple",
+                        "elts": [
+                            {
+                                "_nodetype": "Name",
+                                "id": "total",
+                                "ctx": {
+                                    "_nodetype": "Load"
+                                },
+                                "lineno": 7,
+                                "col_offset": 11
+                            },
+                            {
+                                "_nodetype": "Name",
+                                "id": "average",
+                                "ctx": {
+                                    "_nodetype": "Load"
+                                },
+                                "lineno": 7,
+                                "col_offset": 18
+                            }
+                        ],
+                        "ctx": {
+                            "_nodetype": "Load"
+                        },
+                        "lineno": 7,
+                        "col_offset": 11
+                    },
+                    "lineno": 7,
+                    "col_offset": 4
+                }
+            ],
+            "decorator_list": [],
+            "returns": null,
+            "type_comment": null,
+            "lineno": 3,
+            "col_offset": 0
+        },
+        {
+            "_nodetype": "FunctionDef",
+            "name": "process_data",
+            "args": {
+                "_nodetype": "arguments",
+                "posonlyargs": [],
+                "args": [
+                    {
+                        "_nodetype": "arg",
+                        "arg": "data",
+                        "annotation": null,
+                        "type_comment": null,
+                        "lineno": 9,
+                        "col_offset": 17
+                    }
+                ],
+                "vararg": null,
+                "kwonlyargs": [],
+                "kw_defaults": [],
+                "kwarg": null,
+                "defaults": []
+            },
+            "body": [
+                {
+                    "_nodetype": "Assign",
+                    "targets": [
+                        {
+                            "_nodetype": "Name",
+                            "id": "filtered_data",
+                            "ctx": {
+                                "_nodetype": "Store"
+                            },
+                            "lineno": 10,
+                            "col_offset": 4
+                        }
+                    ],
+                    "value": {
+                        "_nodetype": "ListComp",
+                        "elt": {
+                            "_nodetype": "Name",
+                            "id": "x",
+                            "ctx": {
+                                "_nodetype": "Load"
+                            },
+                            "lineno": 10,
+                            "col_offset": 21
+                        },
+                        "generators": [
+                            {
+                                "_nodetype": "comprehension",
+                                "target": {
+                                    "_nodetype": "Name",
+                                    "id": "x",
+                                    "ctx": {
+                                        "_nodetype": "Store"
+                                    },
+                                    "lineno": 10,
+                                    "col_offset": 27
+                                },
+                                "iter": {
+                                    "_nodetype": "Name",
+                                    "id": "data",
+                                    "ctx": {
+                                        "_nodetype": "Load"
+                                    },
+                                    "lineno": 10,
+                                    "col_offset": 32
+                                },
+                                "ifs": [
+                                    {
+                                        "_nodetype": "Compare",
+                                        "left": {
+                                            "_nodetype": "Name",
+                                            "id": "x",
+                                            "ctx": {
+                                                "_nodetype": "Load"
+                                            },
+                                            "lineno": 10,
+                                            "col_offset": 40
+                                        },
+                                        "ops": [
+                                            {
+                                                "_nodetype": "Gt"
+                                            }
+                                        ],
+                                        "comparators": [
+                                            {
+                                                "_nodetype": "Constant",
+                                                "value": 0,
+                                                "kind": null,
+                                                "lineno": 10,
+                                                "col_offset": 44
+                                            }
+                                        ],
+                                        "lineno": 10,
+                                        "col_offset": 40
+                                    }
+                                ],
+                                "is_async": 0
+                            }
+                        ],
+                        "lineno": 10,
+                        "col_offset": 20
+                    },
+                    "type_comment": null,
+                    "lineno": 10,
+                    "col_offset": 4
+                },
+                {
+                    "_nodetype": "Assign",
+                    "targets": [
+                        {
+                            "_nodetype": "Name",
+                            "id": "negative_data",
+                            "ctx": {
+                                "_nodetype": "Store"
+                            },
+                            "lineno": 11,
+                            "col_offset": 4
+                        }
+                    ],
+                    "value": {
+                        "_nodetype": "ListComp",
+                        "elt": {
+                            "_nodetype": "UnaryOp",
+                            "op": {
+                                "_nodetype": "USub"
+                            },
+                            "operand": {
+                                "_nodetype": "Name",
+                                "id": "x",
+                                "ctx": {
+                                    "_nodetype": "Load"
+                                },
+                                "lineno": 11,
+                                "col_offset": 22
+                            },
+                            "lineno": 11,
+                            "col_offset": 21
+                        },
+                        "generators": [
+                            {
+                                "_nodetype": "comprehension",
+                                "target": {
+                                    "_nodetype": "Name",
+                                    "id": "x",
+                                    "ctx": {
+                                        "_nodetype": "Store"
+                                    },
+                                    "lineno": 11,
+                                    "col_offset": 28
+                                },
+                                "iter": {
+                                    "_nodetype": "Name",
+                                    "id": "data",
+                                    "ctx": {
+                                        "_nodetype": "Load"
+                                    },
+                                    "lineno": 11,
+                                    "col_offset": 33
+                                },
+                                "ifs": [
+                                    {
+                                        "_nodetype": "Compare",
+                                        "left": {
+                                            "_nodetype": "Name",
+                                            "id": "x",
+                                            "ctx": {
+                                                "_nodetype": "Load"
+                                            },
+                                            "lineno": 11,
+                                            "col_offset": 41
+                                        },
+                                        "ops": [
+                                            {
+                                                "_nodetype": "Lt"
+                                            }
+                                        ],
+                                        "comparators": [
+                                            {
+                                                "_nodetype": "Constant",
+                                                "value": 0,
+                                                "kind": null,
+                                                "lineno": 11,
+                                                "col_offset": 45
+                                            }
+                                        ],
+                                        "lineno": 11,
+                                        "col_offset": 41
+                                    }
+                                ],
+                                "is_async": 0
+                            }
+                        ],
+                        "lineno": 11,
+                        "col_offset": 20
+                    },
+                    "type_comment": null,
+                    "lineno": 11,
+                    "col_offset": 4
+                },
+                {
+                    "_nodetype": "Return",
+                    "value": {
+                        "_nodetype": "Tuple",
+                        "elts": [
+                            {
+                                "_nodetype": "Name",
+                                "id": "filtered_data",
+                                "ctx": {
+                                    "_nodetype": "Load"
+                                },
+                                "lineno": 12,
+                                "col_offset": 11
+                            },
+                            {
+                                "_nodetype": "Name",
+                                "id": "negative_data",
+                                "ctx": {
+                                    "_nodetype": "Load"
+                                },
+                                "lineno": 12,
+                                "col_offset": 26
+                            }
+                        ],
+                        "ctx": {
+                            "_nodetype": "Load"
+                        },
+                        "lineno": 12,
+                        "col_offset": 11
+                    },
+                    "lineno": 12,
+                    "col_offset": 4
+                }
+            ],
+            "decorator_list": [],
+            "returns": null,
+            "type_comment": null,
+            "lineno": 9,
+            "col_offset": 0
+        },
+        {
+            "_nodetype": "FunctionDef",
+            "name": "main",
+            "args": {
+                "_nodetype": "arguments",
+                "posonlyargs": [],
+                "args": [],
+                "vararg": null,
+                "kwonlyargs": [],
+                "kw_defaults": [],
+                "kwarg": null,
+                "defaults": []
+            },
+            "body": [
+                {
+                    "_nodetype": "Assign",
+                    "targets": [
+                        {
+                            "_nodetype": "Name",
+                            "id": "raw_data",
+                            "ctx": {
+                                "_nodetype": "Store"
+                            },
+                            "lineno": 15,
+                            "col_offset": 4
+                        }
+                    ],
+                    "value": {
+                        "_nodetype": "ListComp",
+                        "elt": {
+                            "_nodetype": "Call",
+                            "func": {
+                                "_nodetype": "Attribute",
+                                "value": {
+                                    "_nodetype": "Name",
+                                    "id": "random",
+                                    "ctx": {
+                                        "_nodetype": "Load"
+                                    },
+                                    "lineno": 15,
+                                    "col_offset": 16
+                                },
+                                "attr": "randint",
+                                "ctx": {
+                                    "_nodetype": "Load"
+                                },
+                                "lineno": 15,
+                                "col_offset": 16
+                            },
+                            "args": [
+                                {
+                                    "_nodetype": "UnaryOp",
+                                    "op": {
+                                        "_nodetype": "USub"
+                                    },
+                                    "operand": {
+                                        "_nodetype": "Constant",
+                                        "value": 10,
+                                        "kind": null,
+                                        "lineno": 15,
+                                        "col_offset": 32
+                                    },
+                                    "lineno": 15,
+                                    "col_offset": 31
+                                },
+                                {
+                                    "_nodetype": "Constant",
+                                    "value": 10,
+                                    "kind": null,
+                                    "lineno": 15,
+                                    "col_offset": 36
+                                }
+                            ],
+                            "keywords": [],
+                            "lineno": 15,
+                            "col_offset": 16
+                        },
+                        "generators": [
+                            {
+                                "_nodetype": "comprehension",
+                                "target": {
+                                    "_nodetype": "Name",
+                                    "id": "_",
+                                    "ctx": {
+                                        "_nodetype": "Store"
+                                    },
+                                    "lineno": 15,
+                                    "col_offset": 44
+                                },
+                                "iter": {
+                                    "_nodetype": "Call",
+                                    "func": {
+                                        "_nodetype": "Name",
+                                        "id": "range",
+                                        "ctx": {
+                                            "_nodetype": "Load"
+                                        },
+                                        "lineno": 15,
+                                        "col_offset": 49
+                                    },
+                                    "args": [
+                                        {
+                                            "_nodetype": "Constant",
+                                            "value": 10,
+                                            "kind": null,
+                                            "lineno": 15,
+                                            "col_offset": 55
+                                        }
+                                    ],
+                                    "keywords": [],
+                                    "lineno": 15,
+                                    "col_offset": 49
+                                },
+                                "ifs": [],
+                                "is_async": 0
+                            }
+                        ],
+                        "lineno": 15,
+                        "col_offset": 15
+                    },
+                    "type_comment": null,
+                    "lineno": 15,
+                    "col_offset": 4
+                },
+                {
+                    "_nodetype": "Assign",
+                    "targets": [
+                        {
+                            "_nodetype": "Tuple",
+                            "elts": [
+                                {
+                                    "_nodetype": "Name",
+                                    "id": "positive_data",
+                                    "ctx": {
+                                        "_nodetype": "Store"
+                                    },
+                                    "lineno": 16,
+                                    "col_offset": 4
+                                },
+                                {
+                                    "_nodetype": "Name",
+                                    "id": "negative_data",
+                                    "ctx": {
+                                        "_nodetype": "Store"
+                                    },
+                                    "lineno": 16,
+                                    "col_offset": 19
+                                }
+                            ],
+                            "ctx": {
+                                "_nodetype": "Store"
+                            },
+                            "lineno": 16,
+                            "col_offset": 4
+                        }
+                    ],
+                    "value": {
+                        "_nodetype": "Call",
+                        "func": {
+                            "_nodetype": "Name",
+                            "id": "process_data",
+                            "ctx": {
+                                "_nodetype": "Load"
+                            },
+                            "lineno": 16,
+                            "col_offset": 35
+                        },
+                        "args": [
+                            {
+                                "_nodetype": "Name",
+                                "id": "raw_data",
+                                "ctx": {
+                                    "_nodetype": "Load"
+                                },
+                                "lineno": 16,
+                                "col_offset": 48
+                            }
+                        ],
+                        "keywords": [],
+                        "lineno": 16,
+                        "col_offset": 35
+                    },
+                    "type_comment": null,
+                    "lineno": 16,
+                    "col_offset": 4
+                },
+                {
+                    "_nodetype": "Assign",
+                    "targets": [
+                        {
+                            "_nodetype": "Tuple",
+                            "elts": [
+                                {
+                                    "_nodetype": "Name",
+                                    "id": "total_positive",
+                                    "ctx": {
+                                        "_nodetype": "Store"
+                                    },
+                                    "lineno": 18,
+                                    "col_offset": 4
+                                },
+                                {
+                                    "_nodetype": "Name",
+                                    "id": "avg_positive",
+                                    "ctx": {
+                                        "_nodetype": "Store"
+                                    },
+                                    "lineno": 18,
+                                    "col_offset": 20
+                                }
+                            ],
+                            "ctx": {
+                                "_nodetype": "Store"
+                            },
+                            "lineno": 18,
+                            "col_offset": 4
+                        }
+                    ],
+                    "value": {
+                        "_nodetype": "Call",
+                        "func": {
+                            "_nodetype": "Name",
+                            "id": "calculate_statistics",
+                            "ctx": {
+                                "_nodetype": "Load"
+                            },
+                            "lineno": 18,
+                            "col_offset": 35
+                        },
+                        "args": [
+                            {
+                                "_nodetype": "Name",
+                                "id": "positive_data",
+                                "ctx": {
+                                    "_nodetype": "Load"
+                                },
+                                "lineno": 18,
+                                "col_offset": 56
+                            }
+                        ],
+                        "keywords": [],
+                        "lineno": 18,
+                        "col_offset": 35
+                    },
+                    "type_comment": null,
+                    "lineno": 18,
+                    "col_offset": 4
+                },
+                {
+                    "_nodetype": "Assign",
+                    "targets": [
+                        {
+                            "_nodetype": "Tuple",
+                            "elts": [
+                                {
+                                    "_nodetype": "Name",
+                                    "id": "total_negative",
+                                    "ctx": {
+                                        "_nodetype": "Store"
+                                    },
+                                    "lineno": 19,
+                                    "col_offset": 4
+                                },
+                                {
+                                    "_nodetype": "Name",
+                                    "id": "avg_negative",
+                                    "ctx": {
+                                        "_nodetype": "Store"
+                                    },
+                                    "lineno": 19,
+                                    "col_offset": 20
+                                }
+                            ],
+                            "ctx": {
+                                "_nodetype": "Store"
+                            },
+                            "lineno": 19,
+                            "col_offset": 4
+                        }
+                    ],
+                    "value": {
+                        "_nodetype": "Call",
+                        "func": {
+                            "_nodetype": "Name",
+                            "id": "calculate_statistics",
+                            "ctx": {
+                                "_nodetype": "Load"
+                            },
+                            "lineno": 19,
+                            "col_offset": 35
+                        },
+                        "args": [
+                            {
+                                "_nodetype": "Name",
+                                "id": "negative_data",
+                                "ctx": {
+                                    "_nodetype": "Load"
+                                },
+                                "lineno": 19,
+                                "col_offset": 56
+                            }
+                        ],
+                        "keywords": [],
+                        "lineno": 19,
+                        "col_offset": 35
+                    },
+                    "type_comment": null,
+                    "lineno": 19,
+                    "col_offset": 4
+                },
+                {
+                    "_nodetype": "Expr",
+                    "value": {
+                        "_nodetype": "Call",
+                        "func": {
+                            "_nodetype": "Name",
+                            "id": "print",
+                            "ctx": {
+                                "_nodetype": "Load"
+                            },
+                            "lineno": 21,
+                            "col_offset": 4
+                        },
+                        "args": [
+                            {
+                                "_nodetype": "JoinedStr",
+                                "values": [
+                                    {
+                                        "_nodetype": "Constant",
+                                        "value": "Raw data: ",
+                                        "kind": null,
+                                        "lineno": 21,
+                                        "col_offset": 10
+                                    },
+                                    {
+                                        "_nodetype": "FormattedValue",
+                                        "value": {
+                                            "_nodetype": "Name",
+                                            "id": "raw_data",
+                                            "ctx": {
+                                                "_nodetype": "Load"
+                                            },
+                                            "lineno": 21,
+                                            "col_offset": 23
+                                        },
+                                        "conversion": -1,
+                                        "format_spec": null,
+                                        "lineno": 21,
+                                        "col_offset": 10
+                                    }
+                                ],
+                                "lineno": 21,
+                                "col_offset": 10
+                            }
+                        ],
+                        "keywords": [],
+                        "lineno": 21,
+                        "col_offset": 4
+                    },
+                    "lineno": 21,
+                    "col_offset": 4
+                },
+                {
+                    "_nodetype": "Expr",
+                    "value": {
+                        "_nodetype": "Call",
+                        "func": {
+                            "_nodetype": "Name",
+                            "id": "print",
+                            "ctx": {
+                                "_nodetype": "Load"
+                            },
+                            "lineno": 22,
+                            "col_offset": 4
+                        },
+                        "args": [
+                            {
+                                "_nodetype": "JoinedStr",
+                                "values": [
+                                    {
+                                        "_nodetype": "Constant",
+                                        "value": "Positive data: ",
+                                        "kind": null,
+                                        "lineno": 22,
+                                        "col_offset": 10
+                                    },
+                                    {
+                                        "_nodetype": "FormattedValue",
+                                        "value": {
+                                            "_nodetype": "Name",
+                                            "id": "positive_data",
+                                            "ctx": {
+                                                "_nodetype": "Load"
+                                            },
+                                            "lineno": 22,
+                                            "col_offset": 28
+                                        },
+                                        "conversion": -1,
+                                        "format_spec": null,
+                                        "lineno": 22,
+                                        "col_offset": 10
+                                    },
+                                    {
+                                        "_nodetype": "Constant",
+                                        "value": " (Total: ",
+                                        "kind": null,
+                                        "lineno": 22,
+                                        "col_offset": 10
+                                    },
+                                    {
+                                        "_nodetype": "FormattedValue",
+                                        "value": {
+                                            "_nodetype": "Name",
+                                            "id": "total_positive",
+                                            "ctx": {
+                                                "_nodetype": "Load"
+                                            },
+                                            "lineno": 22,
+                                            "col_offset": 52
+                                        },
+                                        "conversion": -1,
+                                        "format_spec": null,
+                                        "lineno": 22,
+                                        "col_offset": 10
+                                    },
+                                    {
+                                        "_nodetype": "Constant",
+                                        "value": ", Average: ",
+                                        "kind": null,
+                                        "lineno": 22,
+                                        "col_offset": 10
+                                    },
+                                    {
+                                        "_nodetype": "FormattedValue",
+                                        "value": {
+                                            "_nodetype": "Name",
+                                            "id": "avg_positive",
+                                            "ctx": {
+                                                "_nodetype": "Load"
+                                            },
+                                            "lineno": 22,
+                                            "col_offset": 79
+                                        },
+                                        "conversion": -1,
+                                        "format_spec": null,
+                                        "lineno": 22,
+                                        "col_offset": 10
+                                    },
+                                    {
+                                        "_nodetype": "Constant",
+                                        "value": ")",
+                                        "kind": null,
+                                        "lineno": 22,
+                                        "col_offset": 10
+                                    }
+                                ],
+                                "lineno": 22,
+                                "col_offset": 10
+                            }
+                        ],
+                        "keywords": [],
+                        "lineno": 22,
+                        "col_offset": 4
+                    },
+                    "lineno": 22,
+                    "col_offset": 4
+                },
+                {
+                    "_nodetype": "Expr",
+                    "value": {
+                        "_nodetype": "Call",
+                        "func": {
+                            "_nodetype": "Name",
+                            "id": "print",
+                            "ctx": {
+                                "_nodetype": "Load"
+                            },
+                            "lineno": 23,
+                            "col_offset": 4
+                        },
+                        "args": [
+                            {
+                                "_nodetype": "JoinedStr",
+                                "values": [
+                                    {
+                                        "_nodetype": "Constant",
+                                        "value": "Negative data: ",
+                                        "kind": null,
+                                        "lineno": 23,
+                                        "col_offset": 10
+                                    },
+                                    {
+                                        "_nodetype": "FormattedValue",
+                                        "value": {
+                                            "_nodetype": "Name",
+                                            "id": "negative_data",
+                                            "ctx": {
+                                                "_nodetype": "Load"
+                                            },
+                                            "lineno": 23,
+                                            "col_offset": 28
+                                        },
+                                        "conversion": -1,
+                                        "format_spec": null,
+                                        "lineno": 23,
+                                        "col_offset": 10
+                                    },
+                                    {
+                                        "_nodetype": "Constant",
+                                        "value": " (Total: ",
+                                        "kind": null,
+                                        "lineno": 23,
+                                        "col_offset": 10
+                                    },
+                                    {
+                                        "_nodetype": "FormattedValue",
+                                        "value": {
+                                            "_nodetype": "Name",
+                                            "id": "total_negative",
+                                            "ctx": {
+                                                "_nodetype": "Load"
+                                            },
+                                            "lineno": 23,
+                                            "col_offset": 52
+                                        },
+                                        "conversion": -1,
+                                        "format_spec": null,
+                                        "lineno": 23,
+                                        "col_offset": 10
+                                    },
+                                    {
+                                        "_nodetype": "Constant",
+                                        "value": ", Average: ",
+                                        "kind": null,
+                                        "lineno": 23,
+                                        "col_offset": 10
+                                    },
+                                    {
+                                        "_nodetype": "FormattedValue",
+                                        "value": {
+                                            "_nodetype": "Name",
+                                            "id": "avg_negative",
+                                            "ctx": {
+                                                "_nodetype": "Load"
+                                            },
+                                            "lineno": 23,
+                                            "col_offset": 79
+                                        },
+                                        "conversion": -1,
+                                        "format_spec": null,
+                                        "lineno": 23,
+                                        "col_offset": 10
+                                    },
+                                    {
+                                        "_nodetype": "Constant",
+                                        "value": ")",
+                                        "kind": null,
+                                        "lineno": 23,
+                                        "col_offset": 10
+                                    }
+                                ],
+                                "lineno": 23,
+                                "col_offset": 10
+                            }
+                        ],
+                        "keywords": [],
+                        "lineno": 23,
+                        "col_offset": 4
+                    },
+                    "lineno": 23,
+                    "col_offset": 4
+                },
+                {
+                    "_nodetype": "If",
+                    "test": {
+                        "_nodetype": "Compare",
+                        "left": {
+                            "_nodetype": "Name",
+                            "id": "avg_positive",
+                            "ctx": {
+                                "_nodetype": "Load"
+                            },
+                            "lineno": 25,
+                            "col_offset": 7
+                        },
+                        "ops": [
+                            {
+                                "_nodetype": "Gt"
+                            }
+                        ],
+                        "comparators": [
+                            {
+                                "_nodetype": "Name",
+                                "id": "avg_negative",
+                                "ctx": {
+                                    "_nodetype": "Load"
+                                },
+                                "lineno": 25,
+                                "col_offset": 22
+                            }
+                        ],
+                        "lineno": 25,
+                        "col_offset": 7
+                    },
+                    "body": [
+                        {
+                            "_nodetype": "Expr",
+                            "value": {
+                                "_nodetype": "Call",
+                                "func": {
+                                    "_nodetype": "Name",
+                                    "id": "print",
+                                    "ctx": {
+                                        "_nodetype": "Load"
+                                    },
+                                    "lineno": 26,
+                                    "col_offset": 8
+                                },
+                                "args": [
+                                    {
+                                        "_nodetype": "Constant",
+                                        "value": "Average of positive numbers is greater.",
+                                        "kind": null,
+                                        "lineno": 26,
+                                        "col_offset": 14
+                                    }
+                                ],
+                                "keywords": [],
+                                "lineno": 26,
+                                "col_offset": 8
+                            },
+                            "lineno": 26,
+                            "col_offset": 8
+                        }
+                    ],
+                    "orelse": [
+                        {
+                            "_nodetype": "Expr",
+                            "value": {
+                                "_nodetype": "Call",
+                                "func": {
+                                    "_nodetype": "Name",
+                                    "id": "print",
+                                    "ctx": {
+                                        "_nodetype": "Load"
+                                    },
+                                    "lineno": 28,
+                                    "col_offset": 8
+                                },
+                                "args": [
+                                    {
+                                        "_nodetype": "Constant",
+                                        "value": "Average of negative numbers is greater or equal.",
+                                        "kind": null,
+                                        "lineno": 28,
+                                        "col_offset": 14
+                                    }
+                                ],
+                                "keywords": [],
+                                "lineno": 28,
+                                "col_offset": 8
+                            },
+                            "lineno": 28,
+                            "col_offset": 8
+                        }
+                    ],
+                    "lineno": 25,
+                    "col_offset": 4
+                },
+                {
+                    "_nodetype": "For",
+                    "target": {
+                        "_nodetype": "Name",
+                        "id": "i",
+                        "ctx": {
+                            "_nodetype": "Store"
+                        },
+                        "lineno": 30,
+                        "col_offset": 8
+                    },
+                    "iter": {
+                        "_nodetype": "Call",
+                        "func": {
+                            "_nodetype": "Name",
+                            "id": "range",
+                            "ctx": {
+                                "_nodetype": "Load"
+                            },
+                            "lineno": 30,
+                            "col_offset": 13
+                        },
+                        "args": [
+                            {
+                                "_nodetype": "Constant",
+                                "value": 5,
+                                "kind": null,
+                                "lineno": 30,
+                                "col_offset": 19
+                            }
+                        ],
+                        "keywords": [],
+                        "lineno": 30,
+                        "col_offset": 13
+                    },
+                    "body": [
+                        {
+                            "_nodetype": "Expr",
+                            "value": {
+                                "_nodetype": "Call",
+                                "func": {
+                                    "_nodetype": "Name",
+                                    "id": "print",
+                                    "ctx": {
+                                        "_nodetype": "Load"
+                                    },
+                                    "lineno": 31,
+                                    "col_offset": 8
+                                },
+                                "args": [
+                                    {
+                                        "_nodetype": "JoinedStr",
+                                        "values": [
+                                            {
+                                                "_nodetype": "Constant",
+                                                "value": "Random data ",
+                                                "kind": null,
+                                                "lineno": 31,
+                                                "col_offset": 14
+                                            },
+                                            {
+                                                "_nodetype": "FormattedValue",
+                                                "value": {
+                                                    "_nodetype": "Name",
+                                                    "id": "i",
+                                                    "ctx": {
+                                                        "_nodetype": "Load"
+                                                    },
+                                                    "lineno": 31,
+                                                    "col_offset": 29
+                                                },
+                                                "conversion": -1,
+                                                "format_spec": null,
+                                                "lineno": 31,
+                                                "col_offset": 14
+                                            },
+                                            {
+                                                "_nodetype": "Constant",
+                                                "value": ": ",
+                                                "kind": null,
+                                                "lineno": 31,
+                                                "col_offset": 14
+                                            },
+                                            {
+                                                "_nodetype": "FormattedValue",
+                                                "value": {
+                                                    "_nodetype": "Call",
+                                                    "func": {
+                                                        "_nodetype": "Attribute",
+                                                        "value": {
+                                                            "_nodetype": "Name",
+                                                            "id": "random",
+                                                            "ctx": {
+                                                                "_nodetype": "Load"
+                                                            },
+                                                            "lineno": 31,
+                                                            "col_offset": 34
+                                                        },
+                                                        "attr": "choice",
+                                                        "ctx": {
+                                                            "_nodetype": "Load"
+                                                        },
+                                                        "lineno": 31,
+                                                        "col_offset": 34
+                                                    },
+                                                    "args": [
+                                                        {
+                                                            "_nodetype": "Name",
+                                                            "id": "raw_data",
+                                                            "ctx": {
+                                                                "_nodetype": "Load"
+                                                            },
+                                                            "lineno": 31,
+                                                            "col_offset": 48
+                                                        }
+                                                    ],
+                                                    "keywords": [],
+                                                    "lineno": 31,
+                                                    "col_offset": 34
+                                                },
+                                                "conversion": -1,
+                                                "format_spec": null,
+                                                "lineno": 31,
+                                                "col_offset": 14
+                                            }
+                                        ],
+                                        "lineno": 31,
+                                        "col_offset": 14
+                                    }
+                                ],
+                                "keywords": [],
+                                "lineno": 31,
+                                "col_offset": 8
+                            },
+                            "lineno": 31,
+                            "col_offset": 8
+                        }
+                    ],
+                    "orelse": [],
+                    "type_comment": null,
+                    "lineno": 30,
+                    "col_offset": 4
+                }
+            ],
+            "decorator_list": [],
+            "returns": null,
+            "type_comment": null,
+            "lineno": 14,
+            "col_offset": 0
+        },
+        {
+            "_nodetype": "If",
+            "test": {
+                "_nodetype": "Compare",
+                "left": {
+                    "_nodetype": "Name",
+                    "id": "__name__",
+                    "ctx": {
+                        "_nodetype": "Load"
+                    },
+                    "lineno": 33,
+                    "col_offset": 3
+                },
+                "ops": [
+                    {
+                        "_nodetype": "Eq"
+                    }
+                ],
+                "comparators": [
+                    {
+                        "_nodetype": "Constant",
+                        "value": "__main__",
+                        "kind": null,
+                        "lineno": 33,
+                        "col_offset": 15
+                    }
+                ],
+                "lineno": 33,
+                "col_offset": 3
+            },
+            "body": [
+                {
+                    "_nodetype": "Expr",
+                    "value": {
+                        "_nodetype": "Call",
+                        "func": {
+                            "_nodetype": "Name",
+                            "id": "main",
+                            "ctx": {
+                                "_nodetype": "Load"
+                            },
+                            "lineno": 34,
+                            "col_offset": 4
+                        },
+                        "args": [],
+                        "keywords": [],
+                        "lineno": 34,
+                        "col_offset": 4
+                    },
+                    "lineno": 34,
+                    "col_offset": 4
+                }
+            ],
+            "orelse": [],
+            "lineno": 33,
+            "col_offset": 0
+        }
+    ],
+    "type_ignores": []
+}

@@ -9,3 +9,5 @@ def default(self, obj):
         elif isinstance(obj, list):
             return [self.default(item) for item in obj]
         return obj
+    
+    

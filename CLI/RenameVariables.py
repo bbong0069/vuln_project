@@ -1,3 +1,7 @@
+import ast
+import json
+
+
 def __init__(self):
         self.var_counter = 1
         self.var_map = {}  # 변수 이름 맵

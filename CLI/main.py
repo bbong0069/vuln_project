@@ -31,7 +31,7 @@ def _init_logger(log_level=logging.INFO, log_format=None):
     handler.setFormatter(logging.Formatter(log_format_string))
     LOG.addHandler(handler)
     LOG.debug("logging initialized")
-    
+
 def _log_option_source(default_val, arg_val, ini_val, option_name):
     """ to show the source of each option. """
     
@@ -62,8 +62,18 @@ def main():
     """ STATIC ANALYZER CLI. """
     debug = (
         logging.DEBUG
-        
+        if "-d" in sys.argv or "--debug" in sys.argv
+        else logging.INFO
     )
+    _init_logger(debug)
+    
+    baseline_formatters = [
+        f.name
+        for f in filter(
+            lambda x: hasattr(x.plugin,"_accepts_baseline"),
+            
+        )
+    ]
     
     parser = argparse.ArgumentParser(
         description="Static Analyzer - Prototype Project",

@@ -3,6 +3,7 @@ import sys
 import json
 from CFGhelper import CFGCreator  # Assuming CFG_helper.py is correctly placed
 from ASTParser import parse_python_file, ast_to_dict
+from ASTencoder import rename
 
 def ensure_database_directory():
     database_dir = os.path.join(os.path.dirname(__file__), '..', 'Database')
@@ -25,6 +26,8 @@ def main():
     ast_json_path = os.path.join(database_dir, 'ast.json')
     with open(ast_json_path, 'w') as file:
         json.dump(ast_to_dict(ast_tree), file, indent=4)
+    
+    rename()
 
     # Create CFG from AST and save as JSON
     cfg_creator = CFGCreator()

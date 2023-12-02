@@ -1,13 +1,7 @@
-import argparse
-import fnmatch
 import logging
-import os
 import sys
-import textwrap
 
-from parse import *
-from parse import ParsersArgs
-
+from CLI.parse import parse_args
 
 
 BASE_CONFIG = "staticanalyze.yaml"
@@ -78,7 +72,7 @@ def main():
             
         )
     ]
-    parser = ParsersArgs().parser
+    parser = parse_args().parser
     
     parser.set_defaults(debug=False)
     parser.set_defaults(verbose=False)

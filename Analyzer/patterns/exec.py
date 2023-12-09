@@ -4,12 +4,7 @@ def _check_exec(node): #함수 이름이 'exec'인거 확인
     return isinstance(node, ast.Expr) and isinstance(node.value, ast.Call) and \
            isinstance(node.value.func, ast.Name) and node.value.func.id == "exec"
 
-<<<<<<< HEAD
 def find_exec_usage(tree):
-=======
-def find_exec_usage(code):
-    tree = ast.parse(code) #입력 코드 ast파싱 (애초에 ast된 거를 넣어도 될 듯)
->>>>>>> 02c318af00be91425f2890fa9f5c3a6aa3f8abd4
     issues = []
 
     for node in ast.walk(tree):

@@ -1,13 +1,13 @@
 import ast
 
 def _check_yaml_load(node):
-    if isinstance(node, ast.Call):
+    if isinstance(node, ast.Call): #노드가 함수 호출 구조인지 확인
         if (
-            hasattr(node.func, "value")
+            hasattr(node.func, "value") 
             and hasattr(node.func.value, "id")
             and node.func.value.id == "yaml"
             and hasattr(node.func, "attr")
-            and node.func.attr == "load"
+            and node.func.attr == "load" #yalm.load인지 확인
             and not any(
                 arg.arg == "Loader" and arg.value.id == "SafeLoader"
                 for arg in node.keywords
@@ -16,7 +16,7 @@ def _check_yaml_load(node):
             return True
     return False
 
-def find_yaml_load_usage(code):
+def find_yaml_load_usage(code): #AST 순회하며 찾기
     tree = ast.parse(code)
     issues = []
 
@@ -24,13 +24,12 @@ def find_yaml_load_usage(code):
         if _check_yaml_load(node):
             issues.append(
                 {
-                    "line": node.lineno,
+                    "line": node.lineno, #라인 넘버
                     "message": "Use of unsafe yaml load. Allows instantiation of"
                                " arbitrary objects. Consider yaml.safe_load().",
-                    "severity": "Medium",
-                    "confidence": "High",
+                    "severity": "Medium", #문제 심각도
+                    "confidence": "High", #문제를 감지하는 신뢰 수준
                 }
             )
 
     return issues
-

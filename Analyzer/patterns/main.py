@@ -1,7 +1,7 @@
 import ast
 from exec import find_exec_usage
 from shell_injection import find_shell_issues, has_shell, _evaluate_shell_call
-from yalm import find_yaml_load_usage
+from yaml_load import find_yaml_load_usage
 from eval import find_eval_usage
 from try_except_continue import try_except_continue_code
 from try_except_pass import try_except_pass_code

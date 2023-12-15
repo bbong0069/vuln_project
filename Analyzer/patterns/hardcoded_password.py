@@ -77,7 +77,7 @@ def check_default_argument(node):
             return report_issue(node, val.s)
 
 #주어진 코드 분석해 issue 리턴
-def analyze_code(tree):
+def hardcoded_password_usage(tree):
     issues = []
 
     for node in ast.walk(tree):

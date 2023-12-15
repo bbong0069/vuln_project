@@ -6,8 +6,8 @@ from eval import find_eval_usage
 from try_except_continue import try_except_continue_code
 from try_except_pass import try_except_pass_code
 from wildcard_injection import find_wildcard_injection_issues
-from hardcoded_password import analyze_code
-
+from hardcoded_password import hardcoded_password_usage
+from pickle import pickle_usage
 def main():
     code_path = input("Enter the path to the Python code file: ")
     
@@ -98,7 +98,7 @@ def main():
                 
             
             #Hardcoded Password
-            hardcoded_password_issues = analyze_code(tree)
+            hardcoded_password_issues = hardcoded_password_usage(tree)
             
             if hardcoded_password_issues:
                 for issue in hardcoded_password_issues:
@@ -107,7 +107,16 @@ def main():
             else:
                 print("No Hardcoded Password issues found in the provided code.")
 
-    
+            
+            pickle_issues = pickle_usage(tree)
+            
+            if pickle_issues:
+            	for issue in pickle_issues:
+                    print(
+                        f"Line {issue['line']}: {issue['message']} (Severity: {issue['severity']}, Confidence: {issue['confidence']})")
+            else:
+                print("No pickle issues found in the provided code.")
+            
 
     except FileNotFoundError:
         print(f"File not found: {code_path}")
